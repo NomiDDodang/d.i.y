@@ -4,6 +4,10 @@ package project.diy.domain;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
@@ -12,12 +16,10 @@ import jakarta.persistence.Id;
 public class Project {
 
     @Id
-    @Column(name = "project")
-    private Long project;
-    private Stirng projectId;
+    @Column(name = "project_id")
+    private String projectId;
     private String projectName;
+    private String projectPassword;
     private String projectDescription;
-    private Stiring ownerId;
-    private String memberId;
 
 }
