@@ -12,9 +12,9 @@ import jakarta.persistence.*;
 public class Member {
 
     @Id
-    @Column(name = "member")
-    private Long member;
-    private String memberId;
+    @Column(name = "member_id")
+    private Long memberId;
     private String memberName;
+    private Long projectId;
 
 }
