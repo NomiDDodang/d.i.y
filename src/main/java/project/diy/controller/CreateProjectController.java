@@ -23,7 +23,7 @@ public class CreateProjectController {
 
     private final ProjectService projectService;
 
-    @GetMapping("/project/{projectId}")
+    @GetMapping("/project/is-duplicated-id/{projectId}")
     public ResponseEntity isDuplicate(@PathVariable(name = "projectId") String projectId) {
         Boolean result = projectService.isDuplicatedId(projectId);
         ProjectIdDuplicateResponseDto projectIdDuplicateResponseDto = ProjectIdDuplicateResponseDto.builder().isDuplicatedId(result).build();
