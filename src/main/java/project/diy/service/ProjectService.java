@@ -37,9 +37,7 @@ public class ProjectService {
         }
     }
 
-    /*
-     * CASCADE로 외래키를 만들긴 했지만, member repository를 가져와서 그 곳의 정보도 삭제하는 로직을 넣고 싶어요!
-     */
+
     @Transactional(rollbackFor = Exception.class)
     public void deleteProject(DeleteProjectDto deleteProjectDto) {
         projectRepository.deleteById(deleteProjectDto.getProjectId());

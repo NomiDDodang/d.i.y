@@ -6,5 +6,7 @@ import org.springframework.stereotype.Repository;
 import project.diy.domain.Member;
 
 @Repository
-public interface MemberRepository extends JpaRepository<Member, String> {
+public interface MemberRepository extends JpaRepository<Member, Long> {
+
+    public void deleteByMemberNameAndProjectId(String memberName, String projectId);
 }

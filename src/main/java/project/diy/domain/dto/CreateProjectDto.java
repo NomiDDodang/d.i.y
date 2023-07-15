@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.util.Date;
+
 
 @Builder
 @Getter
@@ -19,5 +19,4 @@ public class CreateProjectDto {
     String projectName;
     String projectPassword;
     String projectDescription;
-    Date projectCreatedTime;
 }

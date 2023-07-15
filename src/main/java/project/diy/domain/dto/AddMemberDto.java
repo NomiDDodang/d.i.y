@@ -8,12 +8,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.util.List;
+
+
 @Builder
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
-public class ProjectLoginDto {
-    String projectName;
-    String projectPassword;
+public class AddMemberDto {
+
+    List<String> memberNameList;
+    String projectId;
+
+
 }
+
