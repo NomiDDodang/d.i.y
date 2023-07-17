@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import project.diy.domain.dto.CreateProjectDto;
 import project.diy.domain.dto.CreateProjectResponseDto;
-import project.diy.domain.dto.DeleteProjectDto;
+import project.diy.domain.dto.LoginProjectDto;
 import project.diy.domain.dto.ProjectIdDuplicateResponseDto;
 import project.diy.service.ProjectService;
 
@@ -27,14 +27,13 @@ public class ProjectController {
     private final ProjectService projectService;
 
     @GetMapping("/is-duplicated-id/{projectId}")
-    public ResponseEntity isDuplicate(@PathVariable(name = "projectId") String projectId) {
+    public ResponseEntity<ProjectIdDuplicateResponseDto> isDuplicate(@PathVariable(name = "projectId") String projectId) {
         Boolean result = projectService.isDuplicatedId(projectId);
         ProjectIdDuplicateResponseDto projectIdDuplicateResponseDto = ProjectIdDuplicateResponseDto.builder().isDuplicatedId(result).build();
         return ResponseEntity.ok(projectIdDuplicateResponseDto);
     }
 
-
-    @PutMapping("/create")
+    @PutMapping
     public Object createProject(@RequestBody CreateProjectDto createProjectDto) {
         try {
             projectService.createProject(createProjectDto);
@@ -44,16 +43,30 @@ public class ProjectController {
         }
     }
 
-    @DeleteMapping("/delete")
-    public Object deleteProject(@RequestBody DeleteProjectDto deleteProjectDto) {
+    @DeleteMapping("/{projectId}")
+    public Object deleteProject(@PathVariable(name = "projectId") String projectId) {
         try {
-            projectService.deleteProject(deleteProjectDto);
+            projectService.deleteProject(projectId);
             return ResponseEntity.ok().build();
         } catch (Exception exception) {
             return ResponseEntity.status(500).build();
         }
-
     }
+
+    @GetMapping("/login")
+    public Object loginProject(@RequestBody LoginProjectDto loginProjectDto) {
+        boolean result;
+        try {
+            result = projectService.loginProject(loginProjectDto);
+            return ResponseEntity.ok(result);
+        } catch (Exception exception) {
+            return ResponseEntity.badRequest();
+        }
+    }
+
+
+
+
 
 
 }
