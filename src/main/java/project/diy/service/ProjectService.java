@@ -1,16 +1,19 @@
 package project.diy.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import project.diy.domain.Project;
 import project.diy.domain.dto.CreateProjectDto;
-import project.diy.domain.dto.DeleteProjectDto;
+import project.diy.domain.dto.LoginProjectDto;
 import project.diy.repository.ProjectRepository;
 
 import java.util.Date;
+import java.util.NoSuchElementException;
 
 @Service
+@ToString
 @RequiredArgsConstructor
 public class ProjectService {
 
@@ -28,20 +31,26 @@ public class ProjectService {
                 .projectPassword(createProjectDto.getProjectPassword())
                 .projectDescription(createProjectDto.getProjectDescription())
                 .projectCreatedDate(new Date())
+                .projectModifiedDate(new Date())
                 .build();
         if (projectRepository.existsById(createProjectDto.getProjectId())) {
             throw new Exception();
-        }
-        else {
+        } else {
             projectRepository.save(project);
         }
     }
 
 
     @Transactional(rollbackFor = Exception.class)
-    public void deleteProject(DeleteProjectDto deleteProjectDto) {
-        projectRepository.deleteById(deleteProjectDto.getProjectId());
+    public void deleteProject(String projectId) {
+        projectRepository.deleteById(projectId);
     }
 
 
+    public boolean loginProject(LoginProjectDto loginProjectDto) throws Exception {
+        String projectId = loginProjectDto.getProjectId();
+        String projectPassword = loginProjectDto.getProjectPassword();
+        Project foundProject = projectRepository.findById(projectId).orElseThrow(NoSuchElementException::new);
+        return projectPassword.equals(foundProject.getProjectPassword());
+    }
 }
