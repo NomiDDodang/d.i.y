@@ -5,11 +5,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import project.diy.domain.Member;
 import project.diy.domain.dto.AddMemberDto;
+import project.diy.domain.dto.LoginDto;
 import project.diy.repository.MemberRepository;
-import project.diy.repository.ProjectRepository;
 
-import java.util.Date;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 
 @Service
@@ -17,7 +17,6 @@ import java.util.List;
 public class MemberService {
 
     private final MemberRepository memberRepository;
-    private final ProjectRepository projectRepository;
 
     @Transactional(rollbackFor = Exception.class)
     public void addMember(AddMemberDto addMemberDto) {
@@ -32,6 +31,12 @@ public class MemberService {
     }
 
     public void deleteMember(String projectId, String memberName) {
-        memberRepository.deleteByMemberNameAndProjectId(memberName, projectId);
+        memberRepository.deleteByProjectIdAndMemberName(projectId, memberName);
+    }
+
+
+    public boolean existsMember(String projectId, String memberName) {
+        boolean findMember = memberRepository.findByProjectIdAndMemberName(projectId, memberName).isPresent();
+        return findMember;
     }
 }
