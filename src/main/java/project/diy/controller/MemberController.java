@@ -25,7 +25,6 @@ public class MemberController {
     public Object addMember (@RequestBody AddMemberDto addMemberDto) {
         memberService.addMember(addMemberDto);
         return ResponseEntity.ok().build();
-
     }
 
     @DeleteMapping("/{memberName}")
