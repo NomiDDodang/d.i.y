@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import project.diy.domain.Project;
 import project.diy.domain.dto.CreateProjectDto;
-import project.diy.domain.dto.LoginProjectDto;
 import project.diy.repository.ProjectRepository;
 
 import java.util.Date;
@@ -47,10 +46,9 @@ public class ProjectService {
     }
 
 
-    public boolean loginProject(LoginProjectDto loginProjectDto) throws Exception {
-        String projectId = loginProjectDto.getProjectId();
-        String projectPassword = loginProjectDto.getProjectPassword();
-        Project foundProject = projectRepository.findById(projectId).orElseThrow(NoSuchElementException::new);
-        return projectPassword.equals(foundProject.getProjectPassword());
+    public boolean loginProject(String projectId, String projectPassword) throws Exception {
+        boolean findProject = projectPassword.equals(projectRepository.findById(projectId).orElseThrow(NoSuchElementException::new).getProjectPassword());
+        return findProject;
     }
+
 }

@@ -1,16 +1,20 @@
 package project.diy.domain.dto;
 
+
 import jakarta.persistence.EntityListeners;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-
+@Builder
 @Getter
-public class SearchProjectDto {
-
+@AllArgsConstructor
+@NoArgsConstructor
+@EntityListeners(AuditingEntityListener.class)
+public class LoginDto {
+    String projectId;
+    String projectPassword;
+    String memberName;
 }
-
