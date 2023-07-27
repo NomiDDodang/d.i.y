@@ -1,4 +1,4 @@
-package project.diy.controller;
+package project.diy;
 
 
 import jakarta.servlet.http.HttpSessionEvent;

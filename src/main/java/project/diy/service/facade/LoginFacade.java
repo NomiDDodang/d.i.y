@@ -1,4 +1,4 @@
-package project.diy.facade;
+package project.diy.service.facade;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

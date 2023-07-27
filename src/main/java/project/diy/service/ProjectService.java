@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import project.diy.domain.Project;
 import project.diy.domain.dto.CreateProjectDto;
+import project.diy.domain.dto.CreateSpecDto;
 import project.diy.repository.ProjectRepository;
 
 import java.util.Date;
@@ -51,4 +52,8 @@ public class ProjectService {
         return findProject;
     }
 
+    @Transactional(rollbackFor = Exception.class)
+    public void createSpec (CreateSpecDto createSpecDto) {
+
+    }
 }

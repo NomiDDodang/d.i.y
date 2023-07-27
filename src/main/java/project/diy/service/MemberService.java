@@ -5,11 +5,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import project.diy.domain.Member;
 import project.diy.domain.dto.AddMemberDto;
-import project.diy.domain.dto.LoginDto;
 import project.diy.repository.MemberRepository;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 
 @Service
