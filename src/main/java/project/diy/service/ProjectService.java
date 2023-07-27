@@ -9,6 +9,7 @@ import project.diy.domain.dto.CreateProjectDto;
 import project.diy.repository.ProjectRepository;
 
 import java.util.Date;
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 @Service
@@ -51,4 +52,20 @@ public class ProjectService {
         return findProject;
     }
 
+<<<<<<< Updated upstream
+=======
+    @Transactional(rollbackFor = Exception.class)
+    public Map<Long,Object> createSpec(int page) {
+
+        switch (page) {
+            case 1:
+                break;
+            case 2:
+                break;
+        }
+
+    }
+
+
+>>>>>>> Stashed changes
 }
