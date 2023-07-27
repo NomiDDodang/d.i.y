@@ -8,7 +8,7 @@ import project.diy.domain.Member;
 import java.util.Optional;
 
 @Repository
-public interface MemberRepository extends JpaRepository<Member, Long> {
+public interface MemberRepository extends JpaRepository<Member, String> {
 
     public void deleteByProjectIdAndMemberName(String projectId, String memberName);
 

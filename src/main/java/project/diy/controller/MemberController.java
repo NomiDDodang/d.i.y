@@ -16,7 +16,7 @@ import project.diy.service.MemberService;
 @RequiredArgsConstructor
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@RequestMapping("/project/{projectId}/member")
+@RequestMapping("/{projectId}/member")
 public class MemberController {
 
     private final MemberService memberService;

@@ -1,6 +1,5 @@
 package project.diy.domain;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,27 +11,22 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 import static jakarta.persistence.GenerationType.IDENTITY;
-
 
 @Entity
 @Getter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Table(name = "member")
-public class Member {
+@Table(name = "spec")
+public class Spec {
 
     @Id
-    @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "member_id")
-    private Long memberId;
-    private String memberName;
-    private String projectId;
-    private Date latest_login_time;
-
+    @Column(name = "spec_id")
+    Long specId;
+    String specName;
+    String specDescription;
+    Long parentId;
 
 
 }

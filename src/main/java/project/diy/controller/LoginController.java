@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import project.diy.domain.dto.LoginDto;
-import project.diy.facade.LoginFacade;
+import project.diy.service.facade.LoginFacade;
 
 @RequiredArgsConstructor
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@RequestMapping("/project/{projectId}")
+@RequestMapping("/{projectId}")
 public class LoginController {
 
     private final LoginFacade loginFacade;

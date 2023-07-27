@@ -21,12 +21,12 @@ import project.diy.service.ProjectService;
 @RequiredArgsConstructor
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@RequestMapping("/project")
+@RequestMapping("/{projectId}")
 public class ProjectController {
 
     private final ProjectService projectService;
 
-    @GetMapping("/is-duplicated-id/{projectId}")
+    @GetMapping("/is-duplicated-id")
     public ResponseEntity<ProjectIdDuplicateResponseDto> isDuplicate(@PathVariable(name = "projectId") String projectId) {
         Boolean result = projectService.isDuplicatedId(projectId);
         ProjectIdDuplicateResponseDto projectIdDuplicateResponseDto = ProjectIdDuplicateResponseDto.builder().isDuplicatedId(result).build();
@@ -43,7 +43,7 @@ public class ProjectController {
         }
     }
 
-    @DeleteMapping("/{projectId}")
+    @DeleteMapping("/delete-project")
     public Object deleteProject(@PathVariable(name = "projectId") String projectId) {
         try {
             projectService.deleteProject(projectId);
@@ -52,6 +52,10 @@ public class ProjectController {
             return ResponseEntity.status(500).build();
         }
     }
+
+
+    //@GetMapping("/create-specification")
+
 
 
 
