@@ -7,6 +7,7 @@ import project.diy.domain.Member;
 import project.diy.domain.dto.AddMemberDto;
 import project.diy.repository.MemberRepository;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -36,5 +37,16 @@ public class MemberService {
     public boolean existsMember(String projectId, String memberName) {
         boolean findMember = memberRepository.findByProjectIdAndMemberName(projectId, memberName).isPresent();
         return findMember;
+    }
+
+    public void loginMember(String projectId, String memberName){
+       Member findMember = memberRepository.findByProjectIdAndMemberName(projectId, memberName).orElseThrow();
+       Member loginMember = Member.builder()
+               .memberId(findMember.getMemberId())
+               .memberName((findMember.getMemberName()))
+               .lastLogin(new Date())
+               .projectId(findMember.getProjectId())
+               .build();
+       memberRepository.save(loginMember);
     }
 }

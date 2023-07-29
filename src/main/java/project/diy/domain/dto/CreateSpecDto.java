@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.util.Date;
+import java.util.Map;
 
 @Builder
 @Getter
@@ -16,18 +17,6 @@ import java.util.Date;
 @NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 public class CreateSpecDto {
-    String projectId;
-    int userRegister;
-    int userLogin;
-    int userGubun;
-    int userInfo;
-    int funcSearch;
-    int funcSort;
-    int funcAllim;
-    int actContent;
-    int actBookmark;
-    int actSubscribe;
-    int actComment;
-    int actMessage;
-    int actChat;
+        String projectId;
+        Map<String, Object> specInfo;
 }

@@ -8,6 +8,4 @@ import project.diy.domain.Spec;
 public interface SpecRepository extends JpaRepository<Spec, String> {
 
 
-
-
 }

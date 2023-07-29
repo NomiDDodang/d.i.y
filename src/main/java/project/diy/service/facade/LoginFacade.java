@@ -18,10 +18,11 @@ public class LoginFacade {
 
     public void login(LoginDto loginDto) throws Exception {
         if (projectService.loginProject(loginDto.getProjectId(), loginDto.getProjectPassword())) {
-            if (!memberService.existsMember(loginDto.getProjectId(), loginDto.getMemberName())) {
-                throw new NoSuchElementException();
-            }
+            memberService.loginMember(loginDto.getProjectId(), loginDto.getMemberName());
         }
+        else throw new NoSuchElementException();
+
+
     }
 
 }
