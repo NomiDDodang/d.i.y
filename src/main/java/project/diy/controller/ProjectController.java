@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import project.diy.domain.dto.CreateProjectDto;
-import project.diy.domain.dto.CreateSpecDto;
 import project.diy.domain.dto.response_message_dto.CreateProjectResponseDto;
-import project.diy.domain.dto.LoginDto;
 import project.diy.domain.dto.response_message_dto.ProjectIdDuplicateResponseDto;
 import project.diy.service.ProjectService;
 

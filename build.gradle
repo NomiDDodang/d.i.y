@@ -21,6 +21,8 @@ repositories {
 
 dependencies {
 
+	implementation 'com.google.code.gson:gson:2.8.6'
+
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'mysql:mysql-connector-java:8.0.32'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -30,6 +32,8 @@ dependencies {
 	//implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'io.hypersistence:hypersistence-utils-hibernate-60:3.3.1'
 	implementation 'com.fasterxml.jackson.module:jackson-module-jakarta-xmlbind-annotations'
+	//implementation 'com.github.java-json-tools:json-schema-validator:2.2.14'
+	implementation 'org.jsonschema2pojo:jsonschema2pojo-core:1.1.1'
 
 
 	runtimeOnly 'com.h2database:h2'

@@ -1,0 +1,34 @@
+{
+  "id" : "specs",
+  "name" : "항목",
+  "children": [
+    {
+      "id": "register",
+      "name": "회원가입",
+      "children": [
+        {
+          "id": "self-owned",
+          "name": "자체 계정",
+          "children": [
+            {
+              "id": "identity-validation",
+              "name": "본인 인증",
+              "children": [
+                {
+                  "id": "email",
+                  "name": "이메일 인증",
+                  "children" : []
+                },
+                {
+                  "id": "phone_number",
+                  "name": "핸드폰 인증",
+                  "children" : []
+                }
+              ]
+            }
+          ]
+         }
+        ]
+      }
+    ]
+  }
