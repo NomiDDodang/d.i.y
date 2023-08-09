@@ -12,6 +12,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
+import project.diy.domain.dto.SpecInfo;
 
 import java.util.Date;
 import java.util.Map;
@@ -30,7 +31,7 @@ public class ProjectSpec {
 
     @Type(JsonType.class)
     @Column(name = "spec_info")
-    Map<String, Object> specInfo;
+    SpecInfo specInfo;
 
     @Column(name = "last_saved_date")
     Date lastSavedDate;

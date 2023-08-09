@@ -1,0 +1,121 @@
+{
+  "id": "0",
+  "name": "root",
+  "children": [
+    {
+      "id": "M00",
+      "name": "회원가입",
+      "children": [
+        {
+          "id": "M0000",
+          "name": "자체 계정",
+          "children": [
+            {
+              "id": "M000000",
+              "name": "본인인증",
+              "children": [
+                {
+                  "id": "M00000000",
+                  "name": "이메일",
+                  "children": []
+                },
+                {
+                  "id": "M00000000",
+                  "name": "휴대폰",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M0001",
+          "name": "소셜 로그인",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "name": "로그인",
+      "children": [
+        {
+          "id": "M0100",
+          "name": "로그인 상태 유지",
+          "children": []
+        },
+        {
+          "id": "M0101",
+          "name": "아이디 저장",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "name": "유저 권한 설정",
+      "children": []
+    },
+    {
+      "id": "M03",
+      "name": "마이 페이지",
+      "children": []
+    },
+    {
+      "id": "M04",
+      "name": "마이 페이지",
+      "children": [
+        {
+          "id": "M0400",
+          "name": "검색 기준",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "name": "정렬",
+      "children": [
+        {
+          "id": "M0500",
+          "name": "정렬 기준"
+        }
+      ]
+    },
+    {
+      "id": "M06",
+      "name": "알림 설정",
+      "children": []
+    },
+    {
+      "id": "M07",
+      "name": "컨텐츠 관리",
+      "children": []
+    },
+    {
+      "id": "M08",
+      "name": "북마크/스크랩",
+      "children": []
+    },
+    {
+      "id": "M09",
+      "name": "팔로우/구독",
+      "children": []
+    },
+    {
+      "id": "M10",
+      "name": "코멘트/댓글",
+      "children": []
+    },
+    {
+      "id": "M11",
+      "name": "메시지/쪽지",
+      "children": []
+    },
+    {
+      "id": "M12",
+      "name": "채팅",
+      "children": []
+    }
+  ]
+}

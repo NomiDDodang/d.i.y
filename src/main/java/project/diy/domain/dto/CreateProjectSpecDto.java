@@ -2,21 +2,21 @@ package project.diy.domain.dto;
 
 
 import jakarta.persistence.EntityListeners;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.util.Date;
-import java.util.Map;
-
-@Builder
 @Getter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
-public class CreateSpecDto {
+public class CreateProjectSpecDto {
+
         String projectId;
-        Map<String, Object> specInfo;
+        SpecInfo specInfo;
+
 }
