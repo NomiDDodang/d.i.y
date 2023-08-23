@@ -27,9 +27,9 @@ public class MemberController {
         return ResponseEntity.ok().build();
     }
 
-    @DeleteMapping("/{memberName}")
-    public Object deleteMember (@PathVariable(name="projectId") String projectId, @PathVariable(name="memberName") String memberName) {
-        memberService.deleteMember(projectId, memberName);
+    @DeleteMapping
+    public Object deleteMember (@PathVariable(name="memberName") String memberName) {
+        memberService.deleteMember(memberName);
         return ResponseEntity.ok().build();
     }
 }

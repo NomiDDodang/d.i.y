@@ -1,4 +1,4 @@
-package project.diy.domain.dto;
+package project.diy.domain;
 
 import io.swagger.v3.core.util.Json;
 import lombok.AllArgsConstructor;
@@ -18,3 +18,5 @@ public class SpecInfo extends Json {
 
 
 }
+
+

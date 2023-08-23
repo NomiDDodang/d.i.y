@@ -10,7 +10,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.ColumnDefault;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -35,6 +34,9 @@ public class Project {
 
     @Column(name = "project_desc")
     private String projectDescription;
+
+    @Column(name = "progress_status")
+    private String progressStatus;
 
     @Column(name = "created_date")
     @DateTimeFormat(pattern = "yyyy-MM-dd")

@@ -29,8 +29,8 @@ public class MemberService {
         }
     }
 
-    public void deleteMember(String projectId, String memberName) {
-        memberRepository.deleteByProjectIdAndMemberName(projectId, memberName);
+    public void deleteMember(String memberName) {
+        memberRepository.deleteByMemberName(memberName);
     }
 
 

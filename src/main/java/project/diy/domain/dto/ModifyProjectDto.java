@@ -13,6 +13,10 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 public class ModifyProjectDto {
+
     String projectName;
     String projectPassword;
+    String projectDescription;
+    Boolean isPublished;
+
 }
