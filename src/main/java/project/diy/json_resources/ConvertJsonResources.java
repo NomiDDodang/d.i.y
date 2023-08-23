@@ -1,15 +1,15 @@
-package project.diy.json_schema;
+package project.diy.json_resources;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonSyntaxException;
 import org.springframework.core.io.ClassPathResource;
-import project.diy.domain.dto.SpecInfo;
+import project.diy.domain.SpecInfo;
 
 import java.io.File;
 import java.io.IOException;
 
 
-public class ConvertJsonSchema {
+public class ConvertJsonResources {
 
 //    public SpecificationDto getJsonSchemaConvert() throws JsonSyntaxException {
 //        return new Gson().fromJson(getJsonString(), SpecificationDto.class);

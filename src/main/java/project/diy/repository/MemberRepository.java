@@ -10,7 +10,7 @@ import java.util.Optional;
 @Repository
 public interface MemberRepository extends JpaRepository<Member, String> {
 
-    public void deleteByProjectIdAndMemberName(String projectId, String memberName);
+    public void deleteByMemberName(String memberName);
 
     Optional<Member> findByProjectIdAndMemberName(String ProjectId, String MemberName);
 }
