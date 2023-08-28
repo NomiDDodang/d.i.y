@@ -7,6 +7,16 @@ last updated : 2023 - 08 - 22
 ***
 
 
+**You can check out the project's progress & issues**
+
+https://develdog.tistory.com/10
+
+
+
+***
+
+
+
 **API**
 
 http://localhost:8080/swagger-ui/index.html
@@ -16,14 +26,6 @@ http://localhost:8080/swagger-ui/index.html
 
 
 
-***
-
-
-
-**You can refer to the Progress & Issues**
-
-
-https://develdog.tistory.com/10
 
 
 
