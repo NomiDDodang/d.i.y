@@ -23,7 +23,7 @@ http://localhost:8080/swagger-ui/index.html
 **You can refer to the Progress & Issues**
 
 
-https://develdog.tistory.com/11
+https://develdog.tistory.com/10
 
 
 
